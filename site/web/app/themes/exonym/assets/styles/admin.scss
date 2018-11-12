@@ -1,3 +1,10 @@
 .hide-if-no-customize {
   display: none;
 }
+
+.acf-field {
+  &[data-name="caption"],
+  &[data-name="alt"] {
+    display: none;
+  }
+}

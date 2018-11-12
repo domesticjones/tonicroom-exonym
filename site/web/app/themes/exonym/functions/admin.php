@@ -38,7 +38,7 @@ function custom_login_logo() { ?>
   <style type="text/css">
     #login h1 a,
     .login h1 a {
-      background-image: url(<?php echo ex_logo('alternate', 'dark'); ?>);
+      background-image: url(<?php echo ex_logo('alternate', 'light'); ?>);
     }
   </style>
 <?php }
@@ -56,4 +56,23 @@ add_filter('upload_mimes', 'wpcontent_svg_mime_type');
 $roleObject = get_role( 'editor' );
 if (!$roleObject->has_cap('edit_theme_options')) {
   $roleObject->add_cap('edit_theme_options');
+}
+
+// Add Custom Tonic Room Content Types
+if( function_exists('acf_add_options_page') ) {
+	acf_add_options_page(array(
+    'page_title' 	=> 'Studio, Mastering & Service Rates',
+    'menu_title'	=> 'Rates',
+    'menu_slug' 	=> 'rates',
+    'capability'	=> 'edit_posts',
+    'icon_url'    => 'dashicons-share-alt'
+	));
+
+  acf_add_options_page(array(
+    'page_title' 	=> 'Photos of the Facility',
+    'menu_title'	=> 'Photos',
+    'menu_slug' 	=> 'photos',
+    'capability'	=> 'edit_posts',
+    'icon_url'    => 'dashicons-camera'
+  ));
 }

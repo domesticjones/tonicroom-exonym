@@ -25,6 +25,7 @@ function ex_butler() {
 	add_action('wp_head', 'ex_remove_recent_comments_style', 1); // clean up comment styles in the head
 	add_filter('gallery_style', 'ex_gallery_style'); // clean up gallery output
   add_filter('the_content', 'ex_filter_ptags_on_images'); // cleaning up random code around images
+	require_once('cpt.php');
 }
 
 // Remove WP version from RSS
