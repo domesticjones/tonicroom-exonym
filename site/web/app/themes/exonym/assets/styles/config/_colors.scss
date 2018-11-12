@@ -1,13 +1,7 @@
 $white: #fff;
-$grey: #ccc;
+$white-light: transparentize($white, 0.66);
+$white-medium: transparentize($white, 0.33);
+$grey: #f3f3f3;
+$grey-dark: #707070;
 $black: #000;
-$red: #f00;
-$blue: #00f;
-
-$color-scheme: (
-  color-white: $white,
-  color-grey: $grey,
-  color-black: $black,
-  color-red: $red,
-  color-blue: $blue
-);
+$black-trans: transparentize($black, 0.33);

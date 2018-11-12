@@ -1,10 +1,38 @@
 /**
   Font Families & Settings
   ---------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i");
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,700');
 
-$font-default: "Lato", sans-serif;
-$font-heading: "Lato", sans-serif;
+@font-face {
+  font-family: 'liberation_sansbold_italic';
+  src: url('../fonts/LiberationSans-BoldItalic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'liberation_sansbold';
+  src: url('../fonts/LiberationSans-Bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'liberation_sansitalic';
+  src: url('LiberationSans-Italic-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'liberation_sansregular';
+  src: url('LiberationSans-Regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-default: "liberation_sansregular", sans-serif;
+$font-heading: "Oswald", sans-serif;
 
 $font-size: 16px;
 
