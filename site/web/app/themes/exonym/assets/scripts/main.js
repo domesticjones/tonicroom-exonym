@@ -10,27 +10,19 @@ jQuery(document).ready(() => {
 		$this.toggleClass('is-active');
 	});
 
-	// MODULES: Parallax
-	$(window).on('load resize scroll', () => {
-		const d_scroll = $(window).scrollTop();
-		const w_height = $(window).height();
-		$('.animate-parallax').each((i, e) => {
-			const $this = $(e);
-			const $thisBg = $this.find('.module-bg');
-			const p_position = $this.offset().top;
-			const e_height = $this.outerHeight();
-			const ebg_height = $this.find('.module-bg').outerHeight();
-			const bg_diff = ebg_height - e_height;
-			const dhit_in = p_position - w_height;
-			const dhit_out = p_position + e_height;
-			const dhit_read = p_position - w_height - d_scroll;
-			// Boolean hit Check
-			if (dhit_read <= 0 && d_scroll <= dhit_out) {
-				const per_scrolled = (d_scroll - dhit_in) / (dhit_out - dhit_in);
-				const offset = (bg_diff * per_scrolled);
-				$thisBg.css('transform', `translateY(-${offset}px)`);
-			}
-		});
+	// MODULE: Background Transparency
+	let scrollDistance = 0;
+	let w_height = '';
+	let b_height = '';
+	$(window).on('load resize', () => {
+		w_height = $(window).height();
+		b_height = $('body').height();
+	});
+	$(window).on('scroll', () => {
+		const scroll = $(window).scrollTop();
+		const diff = b_height - w_height;
+		scrollDistance = ((diff - scroll) / diff) + 0.25;
+		$('#background-container').css('opacity', scrollDistance);
 	});
 
 	// MODULES: Animate onScreen
