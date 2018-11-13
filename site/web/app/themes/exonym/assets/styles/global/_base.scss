@@ -40,3 +40,18 @@ a {
   position: relative;
   z-index: 100;
 }
+
+/**
+  Responsive Breakpoints
+  ---------------------------------------------------------------------- */
+@media (max-width: 1500px) {
+  .page-section {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 1440px) {
+  .page-section {
+    width: 75vw;
+  }
+}

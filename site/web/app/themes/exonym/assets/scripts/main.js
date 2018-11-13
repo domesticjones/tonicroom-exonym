@@ -1,6 +1,7 @@
 require('jquery-visible');
 require('slick-carousel');
 require('drawsvg');
+require('stickr.js');
 
 jQuery(document).ready(() => {
 	// Wrap embedded objects and force them into 16:9
@@ -8,8 +9,10 @@ jQuery(document).ready(() => {
 
 	// HEADER: Responsive Nav Toggle
 	$('#responsive-nav-toggle').click(e => {
+		e.preventDefault();
 		const $this = $(e.currentTarget);
 		$this.toggleClass('is-active');
+		$('#container').toggleClass('nav-active');
 	});
 
 	// MODULE: Background Transparency
@@ -25,6 +28,21 @@ jQuery(document).ready(() => {
 		const diff = b_height - w_height;
 		scrollDistance = ((diff - scroll) / diff) + 0.25;
 		$('#background-container').css('opacity', scrollDistance);
+	});
+
+	// HEADER: Stick Nav on Scroll
+	let nav_offset = '';
+	$(window).on('load resize', () => {
+		nav_offset = $('#nav-responsive').offset().top;
+	});
+
+	$(window).on('scroll', () => {
+		const scroll = $(window).scrollTop();
+		if (nav_offset <= scroll) {
+			$('#nav-responsive').addClass('is-stuck');
+		} else {
+			$('#nav-responsive').removeClass('is-stuck');
+		}
 	});
 
 	// MODULES: Animate onScreen

@@ -106,6 +106,7 @@
   "dependencies": {
     "drawsvg": "^1.1.0",
     "jquery-visible": "^1.2.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "stickr.js": "^1.0.0"
   }
 }
