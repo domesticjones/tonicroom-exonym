@@ -1,8 +1,8 @@
 /**
   Global Website Footer
   ---------------------------------------------------------------------- */
-.nav-footer {
-  @include navMenu(vertical);
+#footer {
+  display: none;
 }
 
 /**

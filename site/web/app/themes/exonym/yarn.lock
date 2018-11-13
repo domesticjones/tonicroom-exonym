@@ -2094,6 +2094,12 @@ download@^6.2.2:
     p-event "^1.0.0"
     pify "^3.0.0"
 
+drawsvg@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/drawsvg/-/drawsvg-1.1.0.tgz#d43f51280670bd0bea5c4eeda13d515ccf1a5289"
+  dependencies:
+    jquery "^3.1.1"
+
 duplexer2@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.0.2.tgz#c614dcf67e2fb14995a91711e5a617e8a60a31db"
@@ -4184,6 +4190,10 @@ jpegtran-bin@^3.0.0:
 jquery-visible@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/jquery-visible/-/jquery-visible-1.2.0.tgz#4839cac492f2e7f705fd06b1cde202b5da97c1e9"
+
+jquery@^3.1.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.4.3"

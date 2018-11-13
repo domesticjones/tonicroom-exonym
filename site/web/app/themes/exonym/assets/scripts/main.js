@@ -1,4 +1,6 @@
 require('jquery-visible');
+require('slick-carousel');
+require('drawsvg');
 
 jQuery(document).ready(() => {
 	// Wrap embedded objects and force them into 16:9
@@ -39,5 +41,26 @@ jQuery(document).ready(() => {
 				$this.removeClass('is-visible');
 			}
 		});
+	});
+
+	// MODULE: Home Page Logo Animation
+	const homeLogo = $('#logo-home').drawsvg();
+	homeLogo.drawsvg('animate');
+
+	// MODULE: Tab Gallery
+	$('#tabgallery-images').slick({
+		arrows: false,
+		dots: true,
+		autoplay: true,
+	});
+
+	// MODULE: Tabbed Content
+	$('.tabgallery-tab').click(e => {
+		e.preventDefault();
+		const $this = $(e.currentTarget);
+		const target = $this.attr('href');
+		$('.tabgallery-tab, .tabgallery-data-single').removeClass('is-active');
+		$(`.tabgallery-data-single[data-tab="${target}"]`).addClass('is-active');
+		$this.addClass('is-active');
 	});
 });

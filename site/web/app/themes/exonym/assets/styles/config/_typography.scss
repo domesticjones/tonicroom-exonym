@@ -32,6 +32,9 @@
 }
 
 $font-default: "liberation_sansregular", sans-serif;
+$font-default-italic: "liberation_sansitalic", sans-serif;
+$font-default-bold: "liberation_sansbold", sans-serif;
+$font-default-bold-italic: "liberation_sansbold_italic", sans-serif;
 $font-heading: "Oswald", sans-serif;
 
 $font-size: 16px;
@@ -44,8 +47,8 @@ $font-ultra-bold: 900;
 $font-italic: italic;
 
 // Define if font weights and styles use markup or an alternate font face
-$useMarkupBold: true;
-$useMarkupItal: true;
+$useMarkupBold: false;
+$useMarkupItal: false;
 
 @mixin fontBold($undo: true, $weight: $font-bold) {
   @if $useMarkupBold {
@@ -60,11 +63,11 @@ $useMarkupItal: true;
 
   @else {
     @if $undo {
-      font-family: $weight;
+      font-family: $font-default;
     }
 
     @else {
-      font-family: $font-default;
+      font-family: $font-default-bold;
     }
   }
 }
@@ -82,11 +85,11 @@ $useMarkupItal: true;
 
   @else {
     @if $undo {
-      font-family: $style;
+      font-family: $font-default;
     }
 
     @else {
-      font-family: $font-default;
+      font-family: $font-default-italic;
     }
   }
 }
@@ -155,8 +158,8 @@ h6 {
   margin: 0;
   line-height: 1;
   font-family: $font-heading;
-
-  @include fontBold();
+  font-weight: 300;
+  text-transform: uppercase;
 }
 
 h1 {
