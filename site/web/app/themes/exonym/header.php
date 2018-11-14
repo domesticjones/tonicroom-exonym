@@ -101,5 +101,8 @@
 	          <span class="line"></span>
 	          <span class="line"></span>
 					</a>
+					<a href="<?php echo get_home_url(); ?>" class="logo-responsive">
+						<img src="<?php ex_logo(); ?>" />
+					</a>
 				</nav>
       </header>

@@ -12,7 +12,7 @@ jQuery(document).ready(() => {
 		e.preventDefault();
 		const $this = $(e.currentTarget);
 		$this.toggleClass('is-active');
-		$('#container').toggleClass('nav-active');
+		$('#container, #header, #nav-responsive, #header .nav-head').toggleClass('nav-active');
 	});
 
 	// MODULE: Background Transparency
