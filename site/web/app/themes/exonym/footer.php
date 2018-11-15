@@ -14,7 +14,7 @@
           ?>
         </div>
         <div class="contact-map">
-          <iframe class="ignore-ratio" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZbb6t2_4rlQRY5CwAmPR2h4&key=AIzaSyC4iJs4RinRXukkFLMwRlZJr8TzWKdGLIE" allowfullscreen></iframe>
+          <iframe class="ignore-ratio" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZbb6t2_4rlQRY5CwAmPR2h4&key=<?php the_field('google_maps_api', 'options'); ?>" allowfullscreen></iframe>
         </div>
         <p class="copyright">&copy; <?php echo date('Y'); ?> <?php ex_brand('legal'); ?></p>
       </div>
