@@ -4,6 +4,21 @@
 		 =========== */
 
   if (!defined('WPINC')) { die; }
+  
+  function ex_ContactLoopInner($type, $link, $typeLink) {
+    $typeData = '';
+    if ($type == 'email') {
+      $typeData = get_sub_field('address');
+    } elseif ($type == 'phone') {
+      $typeData = get_sub_field('number');
+    }
+    echo '<li>';
+      if ($link) { echo '<a href="' . $typeLink . $typeData . '" target="_blank">'; }
+        if (get_sub_field('name')) { echo '<span class="name">' . get_sub_field('name') . '</span>'; }
+        echo '<span class="data">' . $typeData . '</span>';
+      if ($link) { echo '</a>'; }
+    echo '</li>';
+  }
 
   // Loop for displaying Contact Info
   function ex_ContactLoop($type = null, $link = true, $amount = 'all') {
@@ -20,20 +35,6 @@
     }
     if ($type != null) {
       echo $navWrapStart;
-      function ex_ContactLoopInner($type, $link, $typeLink) {
-        $typeData = '';
-        if ($type == 'email') {
-          $typeData = get_sub_field('address');
-        } elseif ($type == 'phone') {
-          $typeData = get_sub_field('number');
-        }
-        echo '<li>';
-          if ($link) { echo '<a href="' . $typeLink . $typeData . '" target="_blank">'; }
-            if (get_sub_field('name')) { echo '<span class="name">' . get_sub_field('name') . '</span>'; }
-            echo '<span class="data">' . $typeData . '</span>';
-          if ($link) { echo '</a>'; }
-        echo '</li>';
-      }
       while (have_rows($typeName, 'options')): the_row();
       if ($amount == 'all') {
         ex_ContactLoopInner($type, $link, $typeLink);

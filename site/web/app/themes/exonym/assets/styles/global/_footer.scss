@@ -2,7 +2,23 @@
   Global Website Footer
   ---------------------------------------------------------------------- */
 #footer {
-  display: none;
+  position: fixed;
+  z-index: 998;
+  display: block;
+  top: 0;
+  opacity: 0;
+  left: 0;
+  padding: 2rem;
+  transform: translateY(100vh);
+  background-image: linear-gradient(transparentize($black, 1) 0%, transparentize($black, 0.25) 50%, transparentize($black, 0.15) 90%, $black 100%);
+
+  @include grid(center, center);
+  @include transition(all 666ms cubic-bezier(0.6, 0.04, 0.98, 0.335));
+
+  &.contact-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /**

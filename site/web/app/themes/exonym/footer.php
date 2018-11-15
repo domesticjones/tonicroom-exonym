@@ -3,24 +3,20 @@
      DEFAULT FOOTER
      ============== */
 ?>
-    <footer id="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
-      <div class="wrap">
-        <p class="copyright">&copy; Copyright <?php ex_brand('legal'); ?></p>
-        <nav class="nav-footer" role="navigation">
-          <?php wp_nav_menu(array(
-            'container' => 'ul',                    // enter '' to remove nav container
-            'container_class' => 'footer-links cf',	// class of container (should you choose to use it)
-            'menu' => __('Footer', 'exonym'),	      // nav name
-            'menu_class' => 'nav footer-nav cf',    // adding custom nav class
-            'theme_location' => 'footer-menu',		  // where it's located in the theme
-            'before' => '',							            // before the menu
-            'after' => '',							            // after the menu
-            'link_before' => '',					          // before each link
-            'link_after' => '',						          // after each link
-            'depth' => 1,							              // limit the depth of the nav
-            'fallback_cb' => ''						          // fallback function
-          )); ?>
-        </nav>
+    <footer id="footer" class="page-section" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
+      <div class="contact-wrap">
+        <div id="contact-close">Close Contact Information</div>
+        <div class="contact-info">
+          <?php
+            ex_contact('phone');
+            ex_contact('email');
+            echo do_shortcode('[contact-form-7 id="5" title="Contact form 1"]');
+          ?>
+        </div>
+        <div class="contact-map">
+          <iframe class="ignore-ratio" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJZbb6t2_4rlQRY5CwAmPR2h4&key=AIzaSyC4iJs4RinRXukkFLMwRlZJr8TzWKdGLIE" allowfullscreen></iframe>
+        </div>
+        <p class="copyright">&copy; <?php echo date('Y'); ?> <?php ex_brand('legal'); ?></p>
       </div>
     </footer>
   </div>

@@ -290,3 +290,52 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .section-tabgallery {
+    padding-top: 2rem;
+  }
+
+  #logo-home {
+    display: none;
+  }
+
+  .tabgallery-image {
+    height: 66vw;
+  }
+
+  .linkblocks-wrap {
+    padding: 1rem;
+  }
+
+  .linkblock {
+    @include grid(flex-start, center);
+
+    width: 100%;
+    margin: 1rem 0;
+
+    img {
+      margin-right: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .linkblock {
+    img {
+      height: 2rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  .tabgallery-tabs a {
+    font-size: 0.85rem;
+  }
+}

@@ -5,20 +5,20 @@
 // Font
 $fh-font-family: $font-default !default;
 $fh-font-size: $font-size !default;
-$fh-font-color: $black !default;
+$fh-font-color: $white-medium !default;
 
 // Borders
-$fh-border-radius: 5px !default;
+$fh-border-radius: 0 !default;
 $fh-border-width: 1px !default;
 $fh-border-style: solid !default;
-$fh-border-color: $black !default;
+$fh-border-color: $white-light !default;
 
 // Inputs, Textareas, Select, Option
-$fh-input-height: 2.5em !default;
+$fh-input-height: 2em !default;
 $fh-input-width: 100% !default;
 $fh-input-max-width: auto !default;
-$fh-input-bg-color: $white !default;
-$fh-focus-bg-color: $grey !default;
+$fh-input-bg-color: $black-trans !default;
+$fh-focus-bg-color: $black !default;
 $fh-focus-border-color: $fh-border-color !default;
 $fh-focus-font-color: $fh-font-color !default;
 
@@ -30,12 +30,12 @@ $fh-fieldset-bare: true !default;
 
 // Buttons & Input Submits
 $fh-button-height: 2.5em !default;
-$fh-button-width: 100% !default;
+$fh-button-width: auto !default;
 $fh-button-max-width: auto !default;
 $fh-button-font-color: $fh-font-color !default;
-$fh-button-bg-color: $fh-focus-bg-color !default;
-$fh-button-hover-bg-color: $fh-border-color !default;
-$fh-button-hover-font-color: $fh-font-color !default;
+$fh-button-bg-color: $fh-border-color !default;
+$fh-button-hover-bg-color: $white-medium !default;
+$fh-button-hover-font-color: $black !default;
 
 // Layout
 $fh-centered: false !default;
@@ -80,9 +80,13 @@ datalist {
 }
 
 label {
-  display: $fh-display;
-
-  @include center-layout;
+  display: inline-block;
+  line-height: 1;
+  width: 100%;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+  margin: 0 0 1rem 0;
+  font-style: italic;
 }
 
 /* Input & Textarea ------------------ */
@@ -234,13 +238,16 @@ input[type="image"] {
   width: $fh-button-width;
   max-width: $fh-button-max-width;
   background-color: $fh-button-bg-color;
-  padding: $fh-input-height / 5;
+  padding: ($fh-input-height / 5) $fh-input-height;
   cursor: pointer;
   color: $fh-button-font-color;
-  font-weight: $font-bold;
+  text-transform: uppercase;
+  font-family: $font-heading;
   appearance: none;
   border-radius: $fh-border-radius;
-  border: $fh-border-width $fh-border-style $fh-border-color;
+  border: none;
+
+  @include transition();
 }
 
 input[type="image"] {

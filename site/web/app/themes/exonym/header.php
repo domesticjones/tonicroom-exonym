@@ -71,6 +71,9 @@
 						<li>
 							<a href="<?php echo get_permalink(get_option('page_for_posts')); ?>">Press</a>
 						</li>
+						<li class="header-contact">
+							<a href="#contact">Contact</a>
+						</li>
 					</ul>
         </nav>
 				<a href="<?php echo get_home_url(); ?>" id="logo">
@@ -85,7 +88,7 @@
 							<a href="">Amenities</a>
 						</li>
 						<li>
-							<a href="">Contact</a>
+							<a href="#contact">Contact</a>
 						</li>
 						<li>
 							<a href="">Payments</a>

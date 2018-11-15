@@ -15,6 +15,18 @@ jQuery(document).ready(() => {
 		$('#container, #header, #nav-responsive, #header .nav-head').toggleClass('nav-active');
 	});
 
+	// MODULE: Contact Overlay
+	$('a[href="#contact"]').click((e) => {
+		e.preventDefault();
+		$('#responsive-nav-toggle').removeClass('is-active');
+		$('#container, #header, #nav-responsive, #header .nav-head').removeClass('nav-active');
+		$('#footer').addClass('contact-active');
+	});
+	$('#contact-close').click((e) => {
+		e.preventDefault();
+		$('#footer').removeClass('contact-active');
+	});
+
 	// MODULE: Background Transparency
 	let scrollDistance = 0;
 	let w_height = '';

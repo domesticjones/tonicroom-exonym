@@ -55,3 +55,9 @@ a {
     width: 75vw;
   }
 }
+
+@media (max-width: 768px) {
+  .page-section {
+    width: 100%;
+  }
+}
